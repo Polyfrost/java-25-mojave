@@ -123,9 +123,7 @@ jobs:
       - name: Build installer
         run: |
           mkdir "$RUNNER_TEMP/pkgroot"
-          ditto "$BUILD_DIR"/images/jdk-bundle/*.jdk "$RUNNER_TEMP/pkgroot/$(basename "$INSTALL_DIR")"
-          codesign --force --timestamp --options runtime -s "$APPLE_SIGNING_IDENTITY" \
-            "$RUNNER_TEMP/pkgroot/$(basename "$INSTALL_DIR")"
+          ditto "$BUILD_DIR"/images/jdk-bundle-signed/*.jdk "$RUNNER_TEMP/pkgroot/$(basename "$INSTALL_DIR")"
           # The bundle ID is shared with other OpenJDK builds; don't let Installer redirect
           # the install to (or skip it because of) one of them found elsewhere on disk
           pkgbuild --analyze --root "$RUNNER_TEMP/pkgroot" "$RUNNER_TEMP/component.plist"
