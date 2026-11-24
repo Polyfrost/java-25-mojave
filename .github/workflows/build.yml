@@ -107,7 +107,7 @@ jobs:
           mkdir "$RUNNER_TEMP/installer"
           pkgbuild --root "$RUNNER_TEMP/pkgroot" --component-plist "$RUNNER_TEMP/component.plist" \
             --install-location "$(dirname "$INSTALL_DIR")" \
-            --identifier io.github.lunaynx.openjdk-mojave-25 --version "$JDK_VERSION" \
+            --identifier org.polyfrost.openjdk-mojave-25 --version "$JDK_VERSION" \
             "$RUNNER_TEMP/installer/openjdk-mojave-$JDK_VERSION.pkg"
 
       - name: Install

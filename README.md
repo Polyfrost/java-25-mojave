@@ -45,7 +45,7 @@ To uninstall:
 
 ```sh
 sudo rm -rf /Library/Java/JavaVirtualMachines/openjdk-mojave-25.jdk
-sudo pkgutil --forget io.github.lunaynx.openjdk-mojave-25
+sudo pkgutil --forget org.polyfrost.openjdk-mojave-25
 ```
 
 If a patch stops applying to a new release branch, the *Apply patches* step fails; rebase the
